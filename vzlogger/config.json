@@ -4,7 +4,7 @@
   "slug": "vzlogger",
   "description": "VZLogger Plugin",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "url": "https://github.com/KastB/addons-vzlogger",
+  "url": "https://github.com/KastB/addon-vzlogger",
   "startup": "services",
   "boot": "auto",
   "panel_icon": "mdi:HomeFloorL",
