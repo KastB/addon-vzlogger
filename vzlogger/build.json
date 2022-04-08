@@ -1,0 +1,11 @@
+{
+    "build_from": {
+      "amd64": "docker pull stefanschoof/vzlogger:latest",
+      "armhf": "docker pull stefanschoof/vzlogger:latest",
+      "armv7": "docker pull stefanschoof/vzlogger:latest",
+      "i386": "docker pull stefanschoof/vzlogger:latest",
+      "aarch64": "docker pull stefanschoof/vzlogger:latest"
+    },
+    "args": {
+    }
+  }

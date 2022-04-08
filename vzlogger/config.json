@@ -1,0 +1,25 @@
+{
+  "name": "VZLogger",
+  "version": "0.0.1",
+  "slug": "vzlogger",
+  "description": "VZLogger Plugin",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "url": "https://github.com/KastB/addons-vzlogger",
+  "startup": "services",
+  "boot": "auto",
+  "panel_icon": "mdi:HomeFloorL",
+  "panel_title": "VZLogger",
+  "uart": true,
+  "gpio": false,
+  "map": ["config:rw"],
+  "host_network": false,
+  "environment": {
+  },
+  "devices": [
+  ],
+  "privileged": [
+    "SYS_ADMIN",
+    "SYS_RAWIO"
+  ],
+  "init": false
+}
