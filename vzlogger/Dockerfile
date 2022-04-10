@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     dh-autoreconf \
     && rm -rf /var/lib/apt/lists/*
 
-cd /
+RUN cd /
 
 RUN git clone https://github.com/volkszaehler/libsml.git --depth 1 \
  && make install -C libsml/sml
@@ -37,12 +37,9 @@ RUN git clone https://github.com/rscada/libmbus.git --depth 1 \
 
 RUN git clone https://github.com/volkszaehler/vzlogger.git && \
 	cd vzlogger && \
-	./install.sh
-
-FROM $BUILD_FROM
-
-LABEL Description="vzlogger"
-
+	cmake -DBUILD_TEST=off && \
+	make &&\
+	make install
 RUN apt-get update && apt-get install -y \
     libcurl4 \
     libgnutls30 \
@@ -58,10 +55,6 @@ RUN apt-get update && apt-get install -y \
     libmosquitto1 \
     libunistring2 \
     && rm -rf /var/lib/apt/lists/*
-
-# libsml is linked statically => no need to copy
-COPY --from=builder /usr/local/bin/vzlogger /usr/local/bin/vzlogger
-COPY --from=builder /usr/local/lib/libmbus.so* /usr/local/lib/
 
 # without running a user context, no exec is possible and without the dialout group no access to usb ir reader possible
 RUN apt-get update && apt-get install -y socat jq
