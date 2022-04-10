@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     dh-autoreconf \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /vzlogger
+cd /
 
 RUN git clone https://github.com/volkszaehler/libsml.git --depth 1 \
  && make install -C libsml/sml
@@ -35,11 +35,9 @@ RUN git clone https://github.com/rscada/libmbus.git --depth 1 \
  && ./build.sh \
  && make install
 
-COPY . /vzlogger
-
-RUN cmake -DBUILD_TEST=off \
- && make \
- && make install
+RUN git clone https://github.com/volkszaehler/vzlogger.git && \
+	cd vzlogger && \
+	./install.sh
 
 FROM $BUILD_FROM
 
