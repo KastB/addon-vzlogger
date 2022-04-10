@@ -1,10 +1,10 @@
 {
     "build_from": {
-      "amd64": "docker pull stefanschoof/vzlogger:latest",
-      "armhf": "docker pull stefanschoof/vzlogger:latest",
-      "armv7": "docker pull stefanschoof/vzlogger:latest",
-      "i386": "docker pull stefanschoof/vzlogger:latest",
-      "aarch64": "docker pull stefanschoof/vzlogger:latest"
+      "amd64": "amd64/debian:buster",
+      "armhf": "armhf/debian:buster",
+      "armv7": "arm32v7/debian:buster",
+      "i386": "i386/debian:buster",
+      "aarch64": "arm64v8/debian:buster"
     },
     "args": {
     }

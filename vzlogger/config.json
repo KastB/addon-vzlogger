@@ -15,11 +15,18 @@
   "host_network": false,
   "environment": {
   },
-  "devices": [
-  ],
-  "privileged": [
-    "SYS_ADMIN",
-    "SYS_RAWIO"
-  ],
-  "init": false
+  "init": false,
+     "options": {
+    "SOCAT": "false",
+    "SERVER": "",
+    "PORT": "",
+    "UART": "/dev/ttyV0"
+  },
+  "schema": {
+    "SERVER": "str",
+    "PORT": "str",
+    "UART": "str",
+    "SOCAT": "str"
+  }
+
 }
