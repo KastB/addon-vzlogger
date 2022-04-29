@@ -1,6 +1,6 @@
 {
   "name": "VZLogger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "slug": "vzlogger",
   "description": "VZLogger Plugin",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -11,8 +11,9 @@
   "panel_title": "VZLogger",
   "uart": true,
   "gpio": false,
-  "map": ["config:rw"],
+  "map": ["config:ro"],
   "host_network": false,
+  "ingress": true,
   "environment": {
   },
   "init": false,
