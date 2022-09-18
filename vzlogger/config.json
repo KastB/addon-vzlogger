@@ -1,6 +1,6 @@
 {
   "name": "VZLogger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "slug": "vzlogger",
   "description": "VZLogger Plugin",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
