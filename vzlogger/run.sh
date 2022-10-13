@@ -10,7 +10,9 @@ do
 	if [ "$SOCAT" = "true" ]; then
 		echo "starting: /usr/bin/socat pty,link=$UART,waitslave tcp:$SERVER:$PORT,reuseaddr"
 		sleep 10 && vzlogger --foreground -c /config/vzlogger_cfg/vzlogger.cfg & \
+		pid=$!
 		/usr/bin/socat -T 5 pty,link=$UART tcp:$SERVER:$PORT,reuseaddr
+		kill $pid
 		echo "finished"
 	else
 		vzlogger --foreground -c /config/vzlogger_cfg/vzlogger.cfg
