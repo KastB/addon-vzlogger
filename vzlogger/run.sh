@@ -17,5 +17,5 @@ do
 	else
 		vzlogger --foreground -c /config/vzlogger_cfg/vzlogger.cfg
 	fi
-	sleep 1
+	exit 1 # retry did result in bad states e.g. libsml: error: unrecognized sequence
 done
