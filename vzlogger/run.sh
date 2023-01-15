@@ -14,8 +14,10 @@ do
 		/usr/bin/socat -T 5 pty,link=$UART tcp:$SERVER:$PORT,reuseaddr
 		kill $pid
 		echo "finished"
+		sleep 30
 	else
 		vzlogger --foreground -c /config/vzlogger_cfg/vzlogger.cfg
+		sleep 30
 	fi
 	exit 1 # retry did result in bad states e.g. libsml: error: unrecognized sequence
 done
